@@ -13,3 +13,5 @@
 - [ ] Use more Css for better styling, animation etc
 
 
+⬜️| Nope
+✅| Yep
