@@ -6,7 +6,7 @@
 - ✅ Github repository
 - ✅ Basic Structure with HTML and CSS
 - ✅ Added READme.md
-- ⬜️ Pushed to GitHub
+- ✅ Pushed to GitHub
 
 - ⬜️ Event listeners: When clicking a box it creates an X or an O
 
