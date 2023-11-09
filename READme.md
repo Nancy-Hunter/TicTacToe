@@ -16,6 +16,8 @@
 - ⬜️ Reset button
 - ⬜️ Use more Css for better styling, animation etc
 
+- Upload on netlify or github pages
+
 
 
 ⬜️
