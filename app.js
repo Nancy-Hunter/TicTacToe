@@ -25,7 +25,7 @@ class TicTacToe{
         ];
 
         // An array to keep track of X's and O's on the game board
-        this.arrayOptions ["","","","","","","","",""]
+        this.arrayOptionsTracker = ["","","","","","","","",""]
 
         // The current player (X or O)
         this.currentPlayer = 'X'
