@@ -3,15 +3,22 @@
 
 ## Tasks:
 
-- [x] Github repository
-- [x] Basic Structure with HTML and Css
-- [x] Pushed to Github
-- [ ] Event listeners: When clicking a box it creates an X or an O
-- [ ] Create logic when you get 3 X's or 3 O's in a straight line, vertically, horizontally and diagonally Player wins
-- [ ] Create logic for drawing, where both players can't find three X's or O's
-- [ ] Reset button
-- [ ] Use more Css for better styling, animation etc
+- ✅ Github repository
+- ✅ Basic Structure with HTML and CSS
+- ✅ Added READme.md
+- ✅ Pushed to GitHub
+
+- ⬜️ Event listeners: When clicking a box it creates an X or an O
 
 
-⬜️| Nope
-✅| Yep
+- ⬜️ Create logic when you get 3 X's or 3 O's in a straight line, vertically, horizontally and diagonally Player wins
+- ⬜️ Create logic for drawing, where both players can't find three X's or O's
+- ⬜️ Reset button
+- ⬜️ Use more Css for better styling, animation etc
+
+- Upload on netlify or github pages
+
+
+
+⬜️
+✅
