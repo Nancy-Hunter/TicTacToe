@@ -1,11 +1,11 @@
 class ticTacToe {
     constructor(){
         this.counter = 0 //if counter is 9 and no winner --cat's game
-        this.currentPlayer = "X"
-        this.targetedBox = ''
-        this.arrayOptionsTracker = ['','','','','','','','','']
-        this.xArray = []
-        this.oArray = []
+        this.currentPlayer = "X" 
+        this.targetedBox = '' //logs which box is clicked
+        this.arrayOptionsTracker = ['','','','','','','','',''] //tracks all x and o marks
+        this.xArray = [] //tracks all x's
+        this.oArray = [] //tracks all o's
         this.winConditions = [
             [0,1,2],
             [3,4,5],
@@ -20,51 +20,54 @@ class ticTacToe {
     set targetBox (eventListenerSquare) {
         this.targetedBox = eventListenerSquare
     }
-    determineTarget (e) {
-        this.targetBox=Number(e.target.getAttribute('id'))
-        console.log(this.targetedBox);
-        this.squareClicked()
+    determineTarget (e) { //sets targetedBox
+        this.targetBox=Number(e.target.getAttribute('id')) //converts box clicked id attribute to a number
+        console.log(this.targetedBox); 
+        this.squareClicked() 
     }
     squareClicked () { //determines if box if already marked or not
-        if (this.arrayOptionsTracker[this.targetedBox]==''){
-            this.arrayOptionsTracker[this.targetedBox]=this.currentPlayer
-            // this.checkAdjacent()
-            // this.nextOrWinner()
+        if (this.arrayOptionsTracker[this.targetedBox]==''){ //makes sure box isn't already filled
+            this.arrayOptionsTracker[this.targetedBox]=this.currentPlayer //updates arrayOptionsTracker
             console.log(this.arrayOptionsTracker)
             this.placeMarker()
             this.checkForWinner()
         }
         else {
-            console.log("Invalid Move")
+            console.log("Invalid Move") 
         }
     }
     placeMarker () {
         this.counter++ //adds to turn counter    
         if (this.currentPlayer=="X") {
             document.getElementById(this.targetedBox).innerHTML = "X" //adds X to board 
-            this.xArray.push(this.targetedBox)
-            this.xArray= this.xArray.sort((a, b)=> a - b)
+            this.xArray.push(this.targetedBox) //updates xArray
             this.currentPlayer = "O"  //makes it O's turn
         } else {  
             document.getElementById(this.targetedBox).innerHTML = "O" //adds O to board 
-            this.oArray.push(this.targetedBox)
-            this.oArray= this.oArray.sort((a, b)=> a - b)
+            this.oArray.push(this.targetedBox) //updates oArray
             this.currentPlayer = "X"  //makes it X's turn
         }        
     }
-    checkForWinner () { //detemines if next move or winner DOESNT WORK
-        let winnerArray = []
-        winnerArray = this.winConditions.forEach(x=> x.every(current=>this.xArray.includes(current)))
-        console.log(winnerArray)
-        if (winnerArray.includes('true')) {
-            console.log (`${this.currentPlayer} wins!`)
-        } else {
-            console.log (`It's ${this.currentPlayer}'s turn`)
-            console.log(this.xArray)
-            console.log(this.oArray)
-            console.log([0,4,8].every(current=>this.xArray.includes(current)))
+    checkForWinner () { //detemines if next move or winner 
+        let winnerArray 
+        for (let i = 0; i<this.winConditions.length-1; i++) { //loops through winConditions and determines if oArray or xArray match
+            if (this.winConditions[i].every(current=>this.xArray.includes(current)) || this.winConditions[i].every(current=>this.oArray.includes(current))){
+                winnerArray=true //winner found!
+            }
         }
-        
+        if (winnerArray) { //winner!
+            this.winner() 
+        } else { //next turn
+            document.querySelector('h3').innerHTML=`It's ${this.currentPlayer}'s turn`
+        }
+    }
+    winner () { //reverts player to last player to declare a winner
+        if (this.currentPlayer=="X") {
+            this.currentPlayer = "O"
+        } else {
+            this.currentPlayer = "X"
+        }
+        document.querySelector('h3').innerHTML= `${this.currentPlayer} wins!`
     }
 }
 
