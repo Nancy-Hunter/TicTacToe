@@ -16,6 +16,7 @@ class ticTacToe {
             [0,4,8],
             [2,4,6]
         ];
+        
     }
     set targetBox (eventListenerSquare) {
         this.targetedBox = eventListenerSquare
@@ -59,6 +60,10 @@ class ticTacToe {
             this.winner() 
         } else { //next turn
             document.querySelector('h3').innerHTML=`It's ${this.currentPlayer}'s turn`
+            if(this.counter == 9){
+                document.querySelector('h3').innerHTML = `It's a cat's game afterall. press 'reset' to play again`
+                document.querySelector('img').src = 'https://t4.ftcdn.net/jpg/00/97/58/97/360_F_97589769_t45CqXyzjz0KXwoBZT9PRaWGHRk5hQqQ.jpg'
+            }
         }
     }
     winner () { //reverts player to last player to declare a winner
@@ -85,6 +90,9 @@ class ticTacToe {
 
         // Update the message
         document.querySelector('h3').innerHTML = `It's ${this.currentPlayer}'s turn`;
+
+        // Clear cat img
+        document.querySelector('img').src = ''
     }
 
 }
