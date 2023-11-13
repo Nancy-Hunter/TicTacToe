@@ -89,7 +89,9 @@ class ticTacToe {
 
 }
 
+
 let ticTacToeGame = new ticTacToe
+
 
 document.querySelector('.squares').addEventListener('click', function (e) {
     ticTacToeGame.determineTarget (e)
