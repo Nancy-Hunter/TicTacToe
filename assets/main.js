@@ -23,7 +23,7 @@ class ticTacToe {
     determineTarget (e) { //sets targetedBox
         this.targetBox=Number(e.target.getAttribute('id')) //converts box clicked id attribute to a number
         console.log(this.targetedBox); 
-        this.squareClicked() 
+        this.squareClicked()
     }
     squareClicked () { //determines if box if already marked or not
         if (this.arrayOptionsTracker[this.targetedBox]==''){ //makes sure box isn't already filled
@@ -69,6 +69,24 @@ class ticTacToe {
         }
         document.querySelector('h3').innerHTML= `${this.currentPlayer} wins!`
     }
+
+    restartGame() {
+        // Reset all game variables to their initial state
+        this.counter = 0;
+        this.currentPlayer = "X";
+        this.targetedBox = '';
+        this.arrayOptionsTracker = ['','','','','','','','',''];
+        this.xArray = [];
+        this.oArray = [];
+
+        // Clear the board
+        const squares = document.querySelectorAll('.square');
+        squares.forEach(square => square.innerHTML = '');
+
+        // Update the message
+        document.querySelector('h3').innerHTML = `It's ${this.currentPlayer}'s turn`;
+    }
+
 }
 
 let ticTacToeGame = new ticTacToe
@@ -76,3 +94,7 @@ let ticTacToeGame = new ticTacToe
 document.querySelector('.squares').addEventListener('click', function (e) {
     ticTacToeGame.determineTarget (e)
 })
+
+document.getElementById('restartButton').addEventListener('click', function () {
+    ticTacToeGame.restartGame();
+});
