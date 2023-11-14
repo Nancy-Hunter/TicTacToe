@@ -8,15 +8,15 @@
 - ✅ Added READme.md
 - ✅ Pushed to GitHub
 
-- ⬜️ Event listeners: When clicking a box it creates an X or an O
+- ✅ Event listeners: When clicking a box it creates an X or an O
 
 
-- ⬜️ Create logic when you get 3 X's or 3 O's in a straight line, vertically, horizontally and diagonally Player wins
-- ⬜️ Create logic for drawing, where both players can't find three X's or O's
-- ⬜️ Reset button
+- ✅ Create logic when you get 3 X's or 3 O's in a straight line, vertically, horizontally and diagonally Player wins
+- ✅ Create logic for drawing, where both players can't find three X's or O's
+- ✅ Reset button
 - ⬜️ Use more Css for better styling, animation etc
 
-- Upload on netlify or github pages
+- ✅ Upload on netlify or github pages
 
 
 
