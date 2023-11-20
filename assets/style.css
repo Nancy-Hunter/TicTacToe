@@ -90,6 +90,9 @@ body {
     font-size: 8rem;
 }
 
+.square {
+    font-size: 5rem;
+}
 @media only screen and (max-width: 900px) {
     html {
         font-size: 10px;

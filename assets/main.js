@@ -21,8 +21,8 @@ class ticTacToe {
     set targetBox (eventListenerSquare) {
         this.targetedBox = eventListenerSquare
     }
-    determineTarget (e) { //sets targetedBox
-        this.targetBox=Number(e.target.getAttribute('id')) //converts box clicked id attribute to a number
+    determineTarget () { //sets targetedBox
+        this.targetBox=Number(event.target.getAttribute('id')) //converts box clicked id attribute to a number
         console.log(this.targetedBox); 
         this.squareClicked()
     }
@@ -51,7 +51,7 @@ class ticTacToe {
     }
     checkForWinner () { //detemines if next move or winner 
         let winnerArray 
-        for (let i = 0; i<this.winConditions.length-1; i++) { //loops through winConditions and determines if oArray or xArray match
+        for (let i = 0; i<this.winConditions.length; i++) { //loops through winConditions and determines if oArray or xArray match
             if (this.winConditions[i].every(current=>this.xArray.includes(current)) || this.winConditions[i].every(current=>this.oArray.includes(current))){
                 winnerArray=true //winner found!
             }
@@ -101,8 +101,8 @@ class ticTacToe {
 let ticTacToeGame = new ticTacToe
 
 
-document.querySelector('.squares').addEventListener('click', function (e) {
-    ticTacToeGame.determineTarget (e)
+document.querySelector('.squares').addEventListener('click', function () {
+    ticTacToeGame.determineTarget ()
 })
 
 document.getElementById('restartButton').addEventListener('click', function () {
